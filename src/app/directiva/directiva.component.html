@@ -1,0 +1,51 @@
+<!-- Muestra de como funciona *ngIf
+  <div *ngIf="!cargando">
+  <p>Hola termino de cargar</p>
+</div>
+<img *ngIf = "cargando" src="https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/200.gif" alt="">
+
+<button (click) ="alternar()">Alternar</button> -->
+
+<!-- Practicando la directiva *ngFor -->
+<!-- <div *ngFor="let nombre of nombres">
+  <p>Hola mi nombre es: {{nombre}} </p>
+</div>
+
+<div *ngFor = "let producto of productos" class="producto">
+  <p>El nombre del producto es: {{producto.nombre}}</p>
+  <p>Tiene un stock de: {{producto.stock}}</p>
+  <p>El fabricante es: {{producto.fabricante}}</p>
+  <p>Vence en: {{producto.fechaVencimiento}}</p>
+</div> -->
+
+<!-- Directiva *ngSwitch -->
+
+<div class="tab" [ngSwitch]="pestana">
+  <button (click)="cambiarPestana('perfil')">Perfil</button>
+  <button (click)="cambiarPestana('puntos')">Puntos</button>
+  <button (click)="cambiarPestana('info')">Info</button>
+
+  <div class="tabContenido">
+    <p *ngSwitchCase="'perfil'">Este el el perfil</p>
+    <p *ngSwitchCase="'puntos'">Estos son los puntos</p>
+    <p *ngSwitchCase="'info'">Esta es la info</p>
+    <p *ngSwitchDefault>Seleccione una pestaña</p>
+  </div>
+</div>
+
+
+<!-- Directiva ngClass -->
+
+<button (click) = "alternarFondo()">Alternar</button>
+
+<div [ngClass]="{'cuadrado':mostrarCuadrado}">
+  <p>Esto debería ser un cuadrado</p>
+</div>
+
+
+<div *ngFor = "let producto of productos" class="producto">
+  <p [ngClass]="{'textoImportante':producto.esImportante , 'textoGrande': producto.textoGrande}">El nombre del producto es: {{producto.nombre}}</p>
+  <p>Tiene un stock de: {{producto.stock}}</p>
+  <p>El fabricante es: {{producto.fabricante}}</p>
+  <p [class.textoImportante]="producto.textoImportante">Vence en: {{producto.fechaVencimiento}}</p>
+</div>

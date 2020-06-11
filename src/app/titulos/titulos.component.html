@@ -1,0 +1,33 @@
+<!-- <h1>Hola soy {{nombre}}</h1>
+<h1>Mi apellido es {{apellido}}</h1>
+<h2>Hola y yo soy la alumna {{alumno.nombre}} </h2>
+<img [src]="imagen" alt="">
+<br>
+<input type="text" [(ngModel)]="inputNuevo">
+<p>{{inputNuevo}}</p> -->
+
+<label for="">Correo
+  <input type="text" (ngModelChange)="escribirCorreo()" [(ngModel)] = "correo">
+</label>
+
+<label for=""> Contraseña
+  <input type="password" (ngModelChange)="escribirModelo()" (keydown)="ingresar($event)" [(ngModel)] = "password">
+</label>
+
+<button (dblclick)="ingresar($event)" >Iniciar</button>
+
+
+<button (dblclick)="llamarAlert()" > Doble clic</button>
+
+<!-- <br>
+<br>
+<input type="text" (input)="escribir($event.target.value)">
+
+
+<br>
+<input type="text" (focus) = "colorearFondo($event)"> -->
+<br>
+<br>
+<br>
+<img src="http://brandemia.org/sites/default/files/sites/default/files/animacion_nuevo_logo_google.gif"
+          (mouseenter)="cambiarTamano($event)" (mouseleave)="incrementarTamano($event)" alt="">
